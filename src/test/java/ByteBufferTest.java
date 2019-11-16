@@ -10,7 +10,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class ByteBufferTest {
 
-
     @Test
     public void testAllocateDirect2GB() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         JvmUtils.verifyJvmArgumentsPresent(List.of("-Xmx64m", "-XX:MaxDirectMemorySize=2g"));
