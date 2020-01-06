@@ -1,13 +1,16 @@
+package answer;
+
+import common.UnsafeUtils;
 import sun.misc.Unsafe;
 
-public class ShortArrayOffHeap {
+class ShortArrayOffHeapAnswer {
     private final long size;
     private final long startAddress;
     private final short SHORT_LENGTH_IN_BYTES = 2;
 
     private final Unsafe unsafe = UnsafeUtils.createUnsafe();
 
-    public ShortArrayOffHeap(long size) {
+    public ShortArrayOffHeapAnswer(long size) {
         this.size = size;
         startAddress = unsafe.allocateMemory(allocationSize());
         initWithZeros();
