@@ -3,10 +3,13 @@ package answer
 import spock.lang.Specification
 
 class ShortArrayOffHeapAnswerTest extends Specification {
+
+    def shortArray = {long size -> new ShortArrayOffHeapAnswer(size)}
+
     def 'allocate'() {
         given:
         long maxIntPlus1 = Integer.MAX_VALUE + 1L
-        ShortArrayOffHeapAnswer longArray = new ShortArrayOffHeapAnswer(maxIntPlus1)
+        def longArray = shortArray(maxIntPlus1)
 
         when:
         longArray.putShortAt(0L, (short) 0)
