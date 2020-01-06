@@ -7,10 +7,19 @@
     * https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr007.html
     
 # preface
+* goal of this workshop:
+    * get accustomed with rudimentary java's diagnostic tools: 
+    visualVM, jmap, jcmd
+    * learn how to allocate objects in the native java memory (off-heap)
+* exemplary solution is in answers package
+
+# introduction
 * weak generational hypothesise: most objects die young
     * cache and http session don't follow it
 * Off-Heap memory allows your cache data outside of main Java Heap 
 space, but still in RAM
+* off-heap is far more bigger than heap
+* off-heap - no gc
 * `jmap -histo <pid>`
     * prints the number of objects, memory size in bytes, and fully 
     qualified class name for each class
