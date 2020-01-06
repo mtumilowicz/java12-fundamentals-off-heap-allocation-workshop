@@ -9,7 +9,7 @@
 # preface
 * goal of this workshop:
     * get accustomed with rudimentary java's diagnostic tools: 
-    visualVM, jmap, jcmd
+    visualVM, jmap, jcmd 
     * learn how to allocate objects in the native java memory (off-heap)
 * exemplary solution is in answers package
 
