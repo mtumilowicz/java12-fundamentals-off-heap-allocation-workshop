@@ -9,23 +9,34 @@ public class ShortArrayOffHeap {
 
     public ShortArrayOffHeap(long size) {
         this.size = size;
-        long allocationSize = size * SHORT_LENGTH_IN_BYTES;
-        startAddress = unsafe.allocateMemory(allocationSize);
-        unsafe.setMemory(startAddress, allocationSize, (byte) 0);
+        startAddress = unsafe.allocateMemory(allocationSize());
+        initWithZeros();
     }
 
     public void putShortAt(long index, short value) {
         verifyIndexNotExceedsSize(index);
-        unsafe.putShort(startAddress + (index * SHORT_LENGTH_IN_BYTES), value);
+        unsafe.putShort(addressOf(index), value);
     }
 
     public short getShortAt(long index) {
         verifyIndexNotExceedsSize(index);
-        return unsafe.getShort(startAddress + (index * SHORT_LENGTH_IN_BYTES));
+        return unsafe.getShort(addressOf(index));
     }
 
     public void destroy() {
         unsafe.freeMemory(startAddress);
+    }
+
+    private long addressOf(long index) {
+        return startAddress + (index * SHORT_LENGTH_IN_BYTES);
+    }
+
+    private void initWithZeros() {
+        unsafe.setMemory(startAddress, allocationSize(), (byte) 0);
+    }
+
+    private long allocationSize() {
+        return size * SHORT_LENGTH_IN_BYTES;
     }
 
     private void verifyIndexNotExceedsSize(long index) {
