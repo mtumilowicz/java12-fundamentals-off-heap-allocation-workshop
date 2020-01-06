@@ -3,7 +3,7 @@ plugins {
     id 'groovy'
 }
 
-group 'java12-internals-off-heap-allocation'
+group 'java12-fundamentals-off-heap-allocation-workshop'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 12

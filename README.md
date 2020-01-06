@@ -1,4 +1,4 @@
-# java12-internals-off-heap-allocation
+# java12-fundamentals-off-heap-allocation-workshop
 
 * References
     * [WJUG #166 - On-heap cache vs Off-heap cache w Javie - Radek Grębski](https://www.youtube.com/watch?v=USDNmA86kws)
