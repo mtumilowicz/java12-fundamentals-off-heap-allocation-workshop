@@ -14,6 +14,8 @@
 * exemplary solution is in answers package
 
 # introduction
+* java 9 memory model (assumption: g1)
+    ![memory_model](img/java9-memory-model-g1.png)
 * weak generational hypothesise: most objects die young
     * cache and http session don't follow it
 * Off-Heap memory allows your cache data outside of main Java Heap 
