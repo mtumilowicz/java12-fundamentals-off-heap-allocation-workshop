@@ -20,9 +20,4 @@ public class UnsafeTest {
         assertThat(longArray.getShortAt(Integer.MAX_VALUE + 1L)).isEqualTo(Short.MAX_VALUE);
         longArray.destroy(); //free memory
     }
-
-    @Test
-    public void testUnsafeExceedAllocatedMemory() {
-        UnsafeUtils.createUnsafe().allocateMemory(Long.MAX_VALUE);
-    }
 }
