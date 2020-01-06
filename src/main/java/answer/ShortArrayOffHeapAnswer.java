@@ -1,9 +1,10 @@
 package answer;
 
+import common.ShortArrayOffHeap;
 import common.UnsafeUtils;
 import sun.misc.Unsafe;
 
-class ShortArrayOffHeapAnswer {
+class ShortArrayOffHeapAnswer implements ShortArrayOffHeap {
     private final long size;
     private final long startAddress;
     private final short SHORT_LENGTH_IN_BYTES = 2;
